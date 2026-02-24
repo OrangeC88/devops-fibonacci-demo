@@ -1,8 +1,5 @@
 pipeline {
   agent any
-  tools {
-        maven 'Maven'
-    }
   stages {
     stage('Build') {
       steps {
@@ -22,5 +19,14 @@ pipeline {
       }
     }
 
+    stage('Run') {
+      steps {
+        bat 'docker run --rm fib-demo'
+      }
+    }
+
+  }
+  tools {
+    maven 'Maven'
   }
 }

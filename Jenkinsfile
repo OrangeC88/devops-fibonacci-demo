@@ -13,5 +13,11 @@ pipeline {
       }
     }
 
+    stage('Docker Build') {
+      steps {
+        bat 'docker build -t devops-fibonacci-demo .'
+      }
+    }
+
   }
 }
